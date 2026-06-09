@@ -32,14 +32,14 @@ const SATELITES = [
    tendencia       -> evolução do risco: "subindo" | "estavel" | "caindo"
    --------------------------------------------------------------------- */
 const REGIOES = [
-  { id: 1, nome: "Vale do Itajaí",       estado: "SC", area: "Urbana",    temperatura: 24, umidade: 88, chuva: 156, vegetacao: 0.62, risco: "Crítico", tipoRisco: "Enchente",     tendencia: "subindo", coordX: 64, coordY: 84, atualizado: "há 2 min" },
-  { id: 2, nome: "Petrópolis",           estado: "RJ", area: "Urbana",    temperatura: 21, umidade: 91, chuva: 134, vegetacao: 0.71, risco: "Alto",    tipoRisco: "Deslizamento", tendencia: "subindo", coordX: 71, coordY: 73, atualizado: "há 4 min" },
-  { id: 3, nome: "Pantanal Norte",       estado: "MT", area: "Florestal", temperatura: 38, umidade: 22, chuva: 4,   vegetacao: 0.41, risco: "Crítico", tipoRisco: "Queimada",     tendencia: "subindo", coordX: 49, coordY: 55, atualizado: "há 1 min" },
-  { id: 4, nome: "Sertão Central",       estado: "CE", area: "Rural",     temperatura: 36, umidade: 18, chuva: 0,   vegetacao: 0.19, risco: "Alto",    tipoRisco: "Seca",         tendencia: "estavel", coordX: 76, coordY: 33, atualizado: "há 6 min" },
-  { id: 5, nome: "Litoral Sul",          estado: "BA", area: "Costeira",  temperatura: 29, umidade: 79, chuva: 62,  vegetacao: 0.58, risco: "Médio",   tipoRisco: "Enchente",     tendencia: "estavel", coordX: 75, coordY: 45, atualizado: "há 9 min" },
-  { id: 6, nome: "Floresta de Carajás",  estado: "PA", area: "Florestal", temperatura: 34, umidade: 48, chuva: 11,  vegetacao: 0.83, risco: "Médio",   tipoRisco: "Queimada",     tendencia: "subindo", coordX: 57, coordY: 30, atualizado: "há 7 min" },
-  { id: 7, nome: "Grande São Paulo",     estado: "SP", area: "Urbana",    temperatura: 26, umidade: 74, chuva: 48,  vegetacao: 0.35, risco: "Baixo",   tipoRisco: "Enchente",     tendencia: "caindo",  coordX: 65, coordY: 72, atualizado: "há 3 min" },
-  { id: 8, nome: "Cerrado Goiano",       estado: "GO", area: "Rural",     temperatura: 33, umidade: 27, chuva: 6,   vegetacao: 0.44, risco: "Alto",    tipoRisco: "Seca",         tendencia: "subindo", coordX: 58, coordY: 52, atualizado: "há 5 min" }
+  { id: 1, nome: "Vale do Itajaí",       estado: "SC", area: "Urbana",    temperatura: 24, umidade: 88, chuva: 156, vegetacao: 0.62, risco: "Crítico", tipoRisco: "Enchente",     tendencia: "subindo", coordX: 60, coordY: 83, atualizado: "há 2 min" },
+  { id: 2, nome: "Petrópolis",           estado: "RJ", area: "Urbana",    temperatura: 21, umidade: 91, chuva: 134, vegetacao: 0.71, risco: "Alto",    tipoRisco: "Deslizamento", tendencia: "subindo", coordX: 71, coordY: 71, atualizado: "há 4 min" },
+  { id: 3, nome: "Pantanal Norte",       estado: "MT", area: "Florestal", temperatura: 38, umidade: 22, chuva: 4,   vegetacao: 0.41, risco: "Crítico", tipoRisco: "Queimada",     tendencia: "subindo", coordX: 45, coordY: 55, atualizado: "há 1 min" },
+  { id: 4, nome: "Sertão Central",       estado: "CE", area: "Rural",     temperatura: 36, umidade: 18, chuva: 0,   vegetacao: 0.19, risco: "Alto",    tipoRisco: "Seca",         tendencia: "estavel", coordX: 80, coordY: 26, atualizado: "há 6 min" },
+  { id: 5, nome: "Litoral Sul",          estado: "BA", area: "Costeira",  temperatura: 29, umidade: 79, chuva: 62,  vegetacao: 0.58, risco: "Médio",   tipoRisco: "Enchente",     tendencia: "estavel", coordX: 80, coordY: 52, atualizado: "há 9 min" },
+  { id: 6, nome: "Floresta de Carajás",  estado: "PA", area: "Florestal", temperatura: 34, umidade: 48, chuva: 11,  vegetacao: 0.83, risco: "Médio",   tipoRisco: "Queimada",     tendencia: "subindo", coordX: 58, coordY: 29, atualizado: "há 7 min" },
+  { id: 7, nome: "Grande São Paulo",     estado: "SP", area: "Urbana",    temperatura: 26, umidade: 74, chuva: 48,  vegetacao: 0.35, risco: "Baixo",   tipoRisco: "Enchente",     tendencia: "caindo",  coordX: 65, coordY: 74, atualizado: "há 3 min" },
+  { id: 8, nome: "Cerrado Goiano",       estado: "GO", area: "Rural",     temperatura: 33, umidade: 27, chuva: 6,   vegetacao: 0.44, risco: "Alto",    tipoRisco: "Seca",         tendencia: "subindo", coordX: 60, coordY: 56, atualizado: "há 5 min" }
 ];
 
 /* ---------------------------------------------------------------------

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Regiões — ORBITA</title>
   <meta name="description" content="Cadastro de regiões monitoradas pela plataforma ORBITA. Simulação em memória, sem banco de dados." />
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=22" />
 </head>
 <body data-page="regioes">
 
@@ -15,7 +15,7 @@
   <!-- ============ TÍTULO ============ -->
   <div class="container page-head">
     <span class="eyebrow">Expansão da malha</span>
-    <h1>Cadastro de Regiões Monitoradas</h1>
+    <h1>Cadastro de Regiões <span class="text-cycle" data-words="Monitoradas|Vigiadas|Protegidas|em Risco">Monitoradas</span></h1>
     <p>Adicione novas regiões à constelação ORBITA. O cadastro é simulado e mantido em memória durante a navegação — nada é enviado a um servidor ou banco de dados.</p>
   </div>
 
@@ -87,15 +87,15 @@
   <section class="container section">
     <div class="section-head">
       <span class="eyebrow">Suas regiões</span>
-      <h2 class="section-title">Regiões cadastradas nesta sessão</h2>
+      <h2 class="section-title">Regiões <span class="text-cycle" data-words="cadastradas|adicionadas|registradas">cadastradas</span> nesta sessão</h2>
     </div>
     <div class="grid grid-3" id="listaCadastro"><!-- cartões via main.js --></div>
   </section>
 
   <!-- Footer injetado por main.js -->
-  <footer class="site-footer" id="siteFooter"></footer>
+  <footer class="site-footer" id="siteFooter" data-full="true"></footer>
 
-  <script src="js/data.js?v=10"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/data.js?v=22"></script>
+  <script src="js/main.js?v=22"></script>
 </body>
 </html>

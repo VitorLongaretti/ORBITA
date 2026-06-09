@@ -46,7 +46,13 @@ const ICONS = {
   trendUp:   '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>',
   trendDown: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>',
   trendFlat: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/></svg>',
-  close:     '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+  close:     '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+  mail:      '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>',
+  phone:     '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>',
+  github:    '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>',
+  linkedin:  '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',
+  instagram: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+  userPlus:  '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>'
 };
 
 /** Devolve a string SVG de um ícone pelo nome */
@@ -97,10 +103,13 @@ function renderHeader() {
   host.innerHTML = `
     <div class="container nav">
       <a href="index.html" class="logo"><span class="dot"></span>ORBITA</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </button>
       <ul class="nav-links" id="navLinks">${links}</ul>
+      <div class="nav-actions">
+        <button class="nav-cta" id="navLogin" type="button" data-label="Entrar / Cadastrar" aria-label="Entrar ou cadastrar">${ic("userPlus")}</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>`;
 
   // Liga o menu hambúrguer (mobile)
@@ -177,6 +186,95 @@ function initOdsFloats() {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") fecharTodos(null); });
 }
 
+/** Modal simples de login/cadastro (simulado) aberto pelo ícone do header. */
+function initLoginModal() {
+  const btn = $("navLogin");
+  if (!btn) return;
+  btn.addEventListener("click", abrirLogin);
+
+  function abrirLogin() {
+    const overlay = document.createElement("div");
+    overlay.className = "modal-overlay";
+    overlay.innerHTML = `
+      <div class="modal modal-login" role="dialog" aria-modal="true" aria-label="Entrar no ORBITA">
+        <button class="modal-close" type="button" data-act="close" aria-label="Fechar">${ic("close")}</button>
+        <div class="modal-icon">${ic("userPlus")}</div>
+        <h3 class="modal-title" id="loginTitulo">Entrar no ORBITA</h3>
+        <p class="modal-msg" id="loginSub">Acesse para acompanhar seus alertas e regiões.</p>
+        <form class="login-form" id="loginForm" novalidate>
+          <div class="field" id="campoNome" style="display:none">
+            <label>Nome</label>
+            <input type="text" name="nome" placeholder="Seu nome" autocomplete="name" />
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label>E-mail</label>
+            <input type="email" name="email" placeholder="voce@email.com" autocomplete="email" />
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label>Senha</label>
+            <input type="password" name="senha" placeholder="••••••••" autocomplete="current-password" />
+            <span class="error-msg"></span>
+          </div>
+          <button type="submit" class="btn btn-primary" id="loginSubmit" style="width:100%;justify-content:center">Entrar</button>
+        </form>
+        <p class="login-switch" id="loginSwitch">Não tem conta? <a href="#" data-act="toggle">Criar conta</a></p>
+      </div>`;
+    document.body.appendChild(overlay);
+    requestAnimationFrame(() => overlay.classList.add("show"));
+
+    const form = overlay.querySelector("#loginForm");
+    const campoNome = overlay.querySelector("#campoNome");
+    let modoCadastro = false;
+
+    function setModo(cadastro) {
+      modoCadastro = cadastro;
+      campoNome.style.display = cadastro ? "" : "none";
+      overlay.querySelector("#loginTitulo").textContent = cadastro ? "Criar conta no ORBITA" : "Entrar no ORBITA";
+      overlay.querySelector("#loginSub").textContent = cadastro
+        ? "Cadastre-se para acompanhar os alertas."
+        : "Acesse para acompanhar seus alertas e regiões.";
+      overlay.querySelector("#loginSubmit").textContent = cadastro ? "Criar conta" : "Entrar";
+      overlay.querySelector("#loginSwitch").innerHTML = cadastro
+        ? 'Já tem conta? <a href="#" data-act="toggle">Entrar</a>'
+        : 'Não tem conta? <a href="#" data-act="toggle">Criar conta</a>';
+    }
+
+    function fechar() {
+      overlay.classList.remove("show");
+      document.removeEventListener("keydown", aoTeclar);
+      setTimeout(() => overlay.remove(), 250);
+    }
+    function aoTeclar(e) { if (e.key === "Escape") fechar(); }
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) return fechar();        // clique no fundo
+      const acao = e.target.closest("[data-act]");
+      if (!acao) return;
+      if (acao.dataset.act === "close") fechar();
+      if (acao.dataset.act === "toggle") { e.preventDefault(); setModo(!modoCadastro); }
+    });
+    document.addEventListener("keydown", aoTeclar);
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const { nome, email, senha } = form;
+      let ok = true;
+      if (modoCadastro) {
+        if (!nome.value.trim()) { setErro(nome, "Informe seu nome."); ok = false; } else setErro(nome, "");
+      }
+      if (!email.value.trim()) { setErro(email, "Informe seu e-mail."); ok = false; } else setErro(email, "");
+      if (!senha.value || senha.value.length < 4) { setErro(senha, "Senha de pelo menos 4 caracteres."); ok = false; } else setErro(senha, "");
+      if (!ok) return;
+      fechar();
+      mostrarToast(modoCadastro ? "Conta criada" : "Login efetuado", "Acesso simulado — apenas demonstração.");
+    });
+
+    overlay.querySelector('input[name="email"]').focus();
+  }
+}
+
 /** Monta o rodapé. `completo=true` gera o rodapé rico da landing page */
 function renderFooter() {
   const host = $("siteFooter");
@@ -199,23 +297,50 @@ function renderFooter() {
   host.innerHTML = `
     <div class="container">
       <div class="footer-grid">
-        <div>
+        <!-- Coluna da marca: logo + descrição + redes sociais -->
+        <div class="footer-brand">
           <a href="index.html" class="logo"><span class="dot"></span>ORBITA</a>
-          <p class="footer-tagline">Sistema de alerta climático por satélite. Transformamos infraestrutura espacial em proteção concreta para a sociedade. Do espaço para proteger a Terra.</p>
-        </div>
-        <div>
-          <h5>Navegação</h5>
-          <ul>${navLinks}</ul>
-        </div>
-        <div>
-          <h5>Projeto</h5>
-          <ul>
-            <li><a href="#">Global Solution — FIAP</a></li>
-            <li><a href="#">Engenharia de Software</a></li>
-            <li><a href="#">Economia Espacial</a></li>
+          <p class="footer-tagline">Sistema de alerta climático por satélite. Transformamos infraestrutura espacial em proteção concreta para a sociedade — do espaço para proteger a Terra.</p>
+          <ul class="footer-social">
+            <li><a href="https://github.com/VitorLongaretti/ORBITA" target="_blank" rel="noopener" aria-label="GitHub">${ic("github")}</a></li>
+            <li><a href="#" aria-label="LinkedIn">${ic("linkedin")}</a></li>
+            <li><a href="#" aria-label="Instagram">${ic("instagram")}</a></li>
           </ul>
         </div>
+
+        <!-- Grupo de colunas de links -->
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Navegação</h5>
+            <ul>${navLinks}</ul>
+          </div>
+          <div class="footer-col">
+            <h5>O Projeto</h5>
+            <ul>
+              <li><a href="#">Global Solution — FIAP</a></li>
+              <li><a href="#">Engenharia de Software</a></li>
+              <li><a href="#">Economia Espacial</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Links úteis</h5>
+            <ul>
+              <li><a href="index.html">Como funciona</a></li>
+              <li><a href="alertas.html">Central de alertas</a></li>
+              <li><a href="#" class="footer-status"><span>Sistema operacional</span><span class="ping"><span></span><span></span></span></a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Contato</h5>
+            <ul class="footer-contact">
+              <li>${ic("mail")}<a href="mailto:contato@orbita.space">contato@orbita.space</a></li>
+              <li>${ic("phone")}<a href="#">+55 (11) 90000-0000</a></li>
+              <li>${ic("pin")}<address>São Paulo · Brasil · FIAP</address></li>
+            </ul>
+          </div>
+        </div>
       </div>
+
       <div class="footer-bottom">
         <span>© ${ano} ORBITA · Protótipo acadêmico com dados simulados.</span>
         <span>HTML · CSS · JavaScript puro</span>
@@ -247,6 +372,59 @@ function initReveal() {
     { threshold: 0.12 }
   );
   alvos.forEach((el) => obs.observe(el));
+}
+
+/** Efeito "text cycle": troca uma palavra do título com desfoque + deslize,
+ *  ajustando a largura suavemente. Recria, em JS puro, o componente React
+ *  AnimatedTextCycle. Uso no HTML:
+ *    <span class="text-cycle" data-words="A|B|C">A</span>
+ *  Atributo opcional data-interval (ms) controla a velocidade da troca. */
+function initTextCycle() {
+  const alvos = document.querySelectorAll(".text-cycle");
+  if (!alvos.length) return;
+  const semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  alvos.forEach((el) => {
+    const palavras = (el.dataset.words || el.textContent)
+      .split("|").map((s) => s.trim()).filter(Boolean);
+    if (!palavras.length) return;
+
+    // Estrutura interna: palavra visível + medidor oculto
+    const palavra = document.createElement("span");
+    palavra.className = "tc-word";
+    palavra.textContent = palavras[0];
+
+    const medidor = document.createElement("span");
+    medidor.className = "tc-measure";
+    medidor.setAttribute("aria-hidden", "true");
+
+    el.textContent = "";
+    el.append(palavra, medidor);
+
+    // Mede a largura de uma palavra usando o medidor (mesma fonte do título)
+    const medir = (txt) => { medidor.textContent = txt; return Math.ceil(medidor.offsetWidth); };
+    el.style.width = medir(palavras[0]) + "px";
+
+    // Uma só palavra (ou movimento reduzido) -> mantém fixo, sem ciclo
+    if (palavras.length < 2 || semMovimento) return;
+
+    let i = 0;
+    const intervalo = Number(el.dataset.interval) || 2800;
+
+    setInterval(() => {
+      const prox = (i + 1) % palavras.length;
+      palavra.classList.add("tc-out");                 // some a palavra atual
+      el.style.width = medir(palavras[prox]) + "px";   // largura anima para a próxima
+
+      setTimeout(() => {
+        palavra.textContent = palavras[prox];
+        palavra.classList.remove("tc-out");
+        palavra.classList.add("tc-enter");
+        palavra.addEventListener("animationend", () => palavra.classList.remove("tc-enter"), { once: true });
+        i = prox;
+      }, 300);
+    }, intervalo);
+  });
 }
 
 /** Gera um campo de estrelas dinâmico, em todas as páginas.
@@ -804,6 +982,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroVisual();
   initCalibradorHero();
   initOdsFloats();
+  initLoginModal();   // ícone de login/cadastro no header
 
   // Dashboard
   renderMetricas();
@@ -825,5 +1004,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initFormCadastro();
 
   // Animações por último (observa elementos já renderizados)
+  initTextCycle();   // palavras que se alternam nos títulos
   initReveal();
 });

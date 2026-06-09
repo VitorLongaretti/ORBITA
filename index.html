@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ORBITA — Sistema de Alerta Climático por Satélite</title>
   <meta name="description" content="ORBITA transforma dados de satélite em alertas que protegem vidas: enchentes, queimadas, seca e deslizamentos. Do espaço para proteger a Terra." />
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=22" />
 </head>
 <body data-page="index">
 
@@ -14,55 +14,31 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <!-- Vídeo de fundo (HTML puro). Coloque assets/video/orbita.mp4.
-         Se o arquivo não existir, o fundo gradiente padrão aparece. -->
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-photo">
-        <img src="assets/img/hero.png" alt="" />
+    <!-- Vídeo da Terra em tela inteira, de fundo (assets/video/hero.mp4).
+         Sem o arquivo, aparece o poster hero.png. -->
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero.png">
+      <source src="assets/video/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <span class="eyebrow">Economia Espacial · Prevenção de Desastres</span>
+      <h1>Do espaço, protegemos a <span class="gradient-text">Terra</span>.</h1>
+      <p class="subtitle">
+        Alertas climáticos por satélite que antecipam enchentes, queimadas,
+        seca e deslizamentos — antes que virem tragédia.
+      </p>
+      <div class="hero-actions">
+        <a href="dashboard.html" class="btn btn-primary">Acessar Dashboard →</a>
+        <a href="alertas.html" class="btn btn-ghost">Ver Alertas</a>
       </div>
-      <div class="hero-bg-overlay"></div>
     </div>
 
-    <!-- Marcadores interativos sobre a imagem: tornam o hero intuitivo.
-         Posições em % (ajustáveis) sobre a área da Terra/Brasil. -->
-    <div class="hero-markers" id="heroMarkers">
-      <!-- AJUSTE AQUI: left = horizontal (↑ = direita) · top = vertical (↑ = baixo) -->
-      <a class="hero-marker tone-fire"    href="alertas.html?tipo=Queimada"     title="Ver alertas de Queimada"     style="left:72%; top:37%"><span class="hm-dot" data-icon="fire"></span><span class="hm-label">Queimada</span></a>
-      <a class="hero-marker tone-drought" href="alertas.html?tipo=Seca"         title="Ver alertas de Seca"         style="left:87%; top:41%"><span class="hm-dot" data-icon="sun"></span><span class="hm-label">Seca</span></a>
-      <a class="hero-marker tone-water"   href="alertas.html?tipo=Enchente"     title="Ver alertas de Enchente"     style="left:81%; top:60%"><span class="hm-dot" data-icon="wave"></span><span class="hm-label">Enchente</span></a>
-      <a class="hero-marker tone-land"    href="alertas.html?tipo=Deslizamento" title="Ver alertas de Deslizamento" style="left:73%; top:78%"><span class="hm-dot" data-icon="mountain"></span><span class="hm-label">Deslizamento</span></a>
-    </div>
-
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">Economia Espacial · Prevenção de Desastres</span>
-        <h1>Dados do espaço.<br /><span class="gradient-text">Decisões para proteger a Terra.</span></h1>
-        <p class="subtitle">
-          O ORBITA transforma dados simulados de uma constelação de satélites em
-          alertas simples e acionáveis, antecipando enchentes, queimadas, seca e
-          deslizamentos antes que se tornem tragédias.
-        </p>
-        <div class="hero-actions">
-          <a href="dashboard.html" class="btn btn-primary">Acessar Dashboard →</a>
-          <a href="alertas.html" class="btn btn-ghost">Ver Alertas</a>
-        </div>
-        <div class="slogan-pill"><span class="dot" style="width:10px;height:10px"></span> “Do espaço para proteger a Terra.”</div>
-
-        <div class="hero-stats">
-          <div><div class="hs-num gradient-text">5</div><div class="hs-lbl">Satélites simulados</div></div>
-          <div><div class="hs-num gradient-text">8</div><div class="hs-lbl">Regiões monitoradas</div></div>
-          <div><div class="hs-num gradient-text">24/7</div><div class="hs-lbl">Monitoramento contínuo</div></div>
-        </div>
-      </div>
-
-      <!-- Coluna direita vazia: o satélite/Terra vêm da imagem de fundo (hero.png).
-           A animação orbital em CSS é exibida apenas se a imagem não existir. -->
-      <div class="orbit-visual orbit-fallback" aria-hidden="true">
-        <div class="orbit-ring r1"><span class="sat"></span></div>
-        <div class="orbit-ring r2"><span class="sat"></span></div>
-        <div class="orbit-ring r3"></div>
-        <div class="planet"></div>
-      </div>
+    <!-- Barra flutuante de números (estilo "trust bar" do exemplo) -->
+    <div class="hero-trust">
+      <span><strong class="gradient-text">5</strong> satélites simulados</span>
+      <span><strong class="gradient-text">8</strong> regiões monitoradas</span>
+      <span><strong class="gradient-text">24/7</strong> monitoramento contínuo</span>
     </div>
   </section>
 
@@ -116,7 +92,7 @@
     <div class="container">
       <div class="section-head text-center">
         <span class="eyebrow">Cobertura</span>
-        <h2 class="section-title">Quatro riscos monitorados</h2>
+        <h2 class="section-title">Quatro riscos <span class="text-cycle" data-words="monitorados|vigiados|rastreados|antecipados">monitorados</span></h2>
         <p class="section-lead">A plataforma cruza temperatura, umidade, chuva acumulada e índice de vegetação (NDVI) captados por satélite para classificar cada ameaça.</p>
       </div>
       <div class="grid grid-4">
@@ -149,7 +125,7 @@
     <div class="container">
       <div class="section-head text-center">
         <span class="eyebrow">Da órbita à decisão</span>
-        <h2 class="section-title">Como o ORBITA funciona</h2>
+        <h2 class="section-title">Como o ORBITA <span class="text-cycle" data-words="funciona|atua|protege|antecipa">funciona</span></h2>
         <p class="section-lead">Um fluxo contínuo que parte do espaço e chega a quem precisa agir.</p>
       </div>
       <div class="grid grid-4">
@@ -182,7 +158,7 @@
     <div class="container">
       <div class="section-head text-center">
         <span class="eyebrow">Impacto social</span>
-        <h2 class="section-title">Conexão com os ODS da ONU</h2>
+        <h2 class="section-title"><span class="text-cycle" data-words="Conexão|Alinhamento|Compromisso">Conexão</span> com os ODS da ONU</h2>
         <p class="section-lead">A solução une inovação tecnológica e economia espacial a metas globais de desenvolvimento sustentável.</p>
       </div>
       <div class="ods-stage reveal">
@@ -287,7 +263,7 @@
   <section class="section">
     <div class="container">
       <div class="card feature-block text-center reveal" style="padding:50px">
-        <h2 class="section-title">Pronto para explorar a plataforma?</h2>
+        <h2 class="section-title">Pronto para <span class="text-cycle" data-words="explorar|conhecer|testar|navegar">explorar</span> a plataforma?</h2>
         <p class="section-lead">Veja o painel orbital em ação, acompanhe os alertas e cadastre novas regiões de monitoramento.</p>
         <div class="hero-actions" style="justify-content:center;margin-top:26px">
           <a href="dashboard.html" class="btn btn-primary">Acessar Dashboard →</a>
@@ -300,7 +276,7 @@
   <!-- Footer rico injetado por main.js (data-full=true) -->
   <footer class="site-footer" id="siteFooter" data-full="true"></footer>
 
-  <script src="js/data.js?v=10"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/data.js?v=22"></script>
+  <script src="js/main.js?v=22"></script>
 </body>
 </html>
