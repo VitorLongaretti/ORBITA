@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ORBITA — Sistema de Alerta Climático por Satélite</title>
   <meta name="description" content="ORBITA transforma dados de satélite em alertas que protegem vidas: enchentes, queimadas, seca e deslizamentos. Do espaço para proteger a Terra." />
-  <link rel="stylesheet" href="css/style.css?v=7" />
+  <link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body data-page="index">
 
@@ -185,7 +185,21 @@
         <h2 class="section-title">Conexão com os ODS da ONU</h2>
         <p class="section-lead">A solução une inovação tecnológica e economia espacial a metas globais de desenvolvimento sustentável.</p>
       </div>
-      <div class="grid grid-4">
+      <div class="ods-layout">
+        <!-- Painel de vídeo das ODS -->
+        <figure class="ods-video reveal">
+          <video autoplay muted loop playsinline poster="assets/img/ods-referencia.png">
+            <source src="assets/video/ods.mp4" type="video/mp4" />
+          </video>
+          <span class="ods-video-glow" aria-hidden="true"></span>
+          <figcaption>
+            <span class="ods-video-tag">Impacto global</span>
+            Os Objetivos de Desenvolvimento Sustentável no centro da missão ORBITA.
+          </figcaption>
+        </figure>
+
+        <!-- Cards das ODS (grid 2×2) -->
+        <div class="ods-cards">
         <!-- ODS 09 — rede de inovação (nós orbitando) -->
         <div class="card card-hover ods-card reveal">
           <div class="ods-ring" style="color:#4f8cff">
@@ -254,7 +268,8 @@
           <h4>Fome Zero e Agricultura Sustentável</h4>
           <p>Protege a produção de alimentos contra a seca e perdas climáticas no campo.</p>
         </div>
-      </div>
+        </div><!-- /.ods-cards -->
+      </div><!-- /.ods-layout -->
     </div>
   </section>
 
@@ -275,7 +290,7 @@
   <!-- Footer rico injetado por main.js (data-full=true) -->
   <footer class="site-footer" id="siteFooter" data-full="true"></footer>
 
-  <script src="js/data.js?v=7"></script>
-  <script src="js/main.js?v=7"></script>
+  <script src="js/data.js?v=8"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>

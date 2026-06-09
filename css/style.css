@@ -466,7 +466,45 @@ body::after {
   background: linear-gradient(90deg, var(--accent), transparent 85%);
 }
 
-/* ODS */
+/* ODS — layout em duas colunas: vídeo + cards */
+.ods-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+.ods-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+/* Painel de vídeo elegante */
+.ods-video {
+  position: relative; margin: 0;
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow), 0 0 40px rgba(34, 211, 238, .1);
+}
+.ods-video video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.ods-video-glow {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: inset 0 0 70px rgba(34, 211, 238, .14);
+  border: 1px solid rgba(34, 211, 238, .16);
+}
+.ods-video figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  padding: 26px 24px 20px; font-size: .95rem; color: var(--text);
+  background: linear-gradient(transparent, rgba(4, 5, 13, .55) 35%, rgba(4, 5, 13, .92));
+}
+.ods-video-tag {
+  display: inline-block; margin-bottom: 8px;
+  font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--cyan);
+  border: 1px solid var(--glass-border); background: var(--glass);
+  padding: 4px 11px; border-radius: 999px;
+}
+
+/* ODS — cards */
 .ods-card { padding: 26px; text-align: center; }
 
 /* Anel com ícone animado (estilo do painel de referência) */
@@ -783,6 +821,9 @@ body::after {
   .split { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .dash-row { grid-template-columns: 1fr !important; }
+  /* ODS: vídeo em cima, cards embaixo */
+  .ods-layout { grid-template-columns: 1fr; }
+  .ods-video { aspect-ratio: 16 / 9; }
 }
 @media (max-width: 680px) {
   .nav-links {
@@ -795,6 +836,7 @@ body::after {
   .nav-links a { padding: 14px 10px; border-radius: 8px; }
   .nav-toggle { display: flex; }
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .ods-cards { grid-template-columns: 1fr 1fr; } /* mantém 2 colunas no celular (compacto) */
   .form-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .section { padding: 58px 0; }
