@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regiões — ORBITA</title>
+  <meta name="description" content="Cadastro de regiões monitoradas pela plataforma ORBITA. Simulação em memória, sem banco de dados." />
+  <link rel="stylesheet" href="css/style.css?v=7" />
+</head>
+<body data-page="regioes">
+
+  <!-- Header injetado por main.js -->
+  <header class="site-header" id="siteHeader"></header>
+
+  <!-- ============ TÍTULO ============ -->
+  <div class="container page-head">
+    <span class="eyebrow">Expansão da malha</span>
+    <h1>Cadastro de Regiões Monitoradas</h1>
+    <p>Adicione novas regiões à constelação ORBITA. O cadastro é simulado e mantido em memória durante a navegação — nada é enviado a um servidor ou banco de dados.</p>
+  </div>
+
+  <!-- ============ FORMULÁRIO ============ -->
+  <section class="container">
+    <div class="card form-card reveal">
+      <form id="formRegiao" novalidate>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="nome">Nome da região</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex.: Bacia do Rio Doce" />
+            <span class="error-msg"></span>
+          </div>
+
+          <div class="field">
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado">
+              <option value="">Selecione...</option>
+              <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+              <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+              <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+              <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+              <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+              <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+              <option>SP</option><option>SE</option><option>TO</option>
+            </select>
+            <span class="error-msg"></span>
+          </div>
+
+          <div class="field">
+            <label for="area">Tipo de área</label>
+            <select id="area" name="area">
+              <option value="">Selecione...</option>
+              <option>Urbana</option>
+              <option>Rural</option>
+              <option>Florestal</option>
+              <option>Costeira</option>
+            </select>
+            <span class="error-msg"></span>
+          </div>
+
+          <div class="field">
+            <label for="populacao">População estimada</label>
+            <input type="number" id="populacao" name="populacao" min="1" placeholder="Ex.: 120000" />
+            <span class="error-msg"></span>
+          </div>
+
+          <div class="field">
+            <label for="tipoRisco">Risco predominante</label>
+            <select id="tipoRisco" name="tipoRisco">
+              <option value="">Selecione...</option>
+              <option>Enchente</option>
+              <option>Queimada</option>
+              <option>Seca</option>
+              <option>Deslizamento</option>
+            </select>
+            <span class="error-msg"></span>
+          </div>
+
+          <div class="field full">
+            <button type="submit" class="btn btn-primary">＋ Cadastrar região</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ LISTA CADASTRADA ============ -->
+  <section class="container section">
+    <div class="section-head">
+      <span class="eyebrow">Suas regiões</span>
+      <h2 class="section-title">Regiões cadastradas nesta sessão</h2>
+    </div>
+    <div class="grid grid-3" id="listaCadastro"><!-- cartões via main.js --></div>
+  </section>
+
+  <!-- Footer injetado por main.js -->
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="js/data.js?v=7"></script>
+  <script src="js/main.js?v=7"></script>
+</body>
+</html>

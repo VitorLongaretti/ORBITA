@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — ORBITA</title>
+  <meta name="description" content="Painel orbital de monitoramento: métricas, índice de risco, status dos satélites, mapa de risco, leituras satelitais e tendências." />
+  <link rel="stylesheet" href="css/style.css?v=7" />
+</head>
+<body data-page="dashboard">
+
+  <!-- Header injetado por main.js -->
+  <header class="site-header" id="siteHeader"></header>
+
+  <!-- ============ TÍTULO ============ -->
+  <div class="container page-head">
+    <span class="eyebrow">Centro de Operações</span>
+    <h1>Painel Orbital de Monitoramento</h1>
+    <p>Visão consolidada da constelação ORBITA sobre o território brasileiro. Dados simulados, atualizados em tempo de demonstração.</p>
+  </div>
+
+  <!-- ============ MÉTRICAS ============ -->
+  <section class="container">
+    <div class="grid grid-4" id="metricas"><!-- preenchido via main.js --></div>
+  </section>
+
+  <!-- ============ ÍNDICE DE RISCO + MAPA ============ -->
+  <section class="container section" style="padding-top:46px">
+    <div class="grid dash-row" style="grid-template-columns:1fr 1.4fr;gap:22px">
+      <!-- Índice de risco geral (gauge) -->
+      <div class="card gauge-card reveal">
+        <div class="gauge" id="gaugeRisco">
+          <div class="gauge-inner">
+            <div class="g-val" id="gaugeVal">0</div>
+            <div class="g-lbl">Índice geral</div>
+          </div>
+        </div>
+        <div class="gauge-info">
+          <h3>Índice de risco da rede</h3>
+          <p>Média ponderada do risco de todas as regiões monitoradas, em escala de 0 a 100. Recalculado a cada nova leitura orbital.</p>
+          <span class="gauge-status" id="gaugeStatus">● Calculando…</span>
+        </div>
+      </div>
+
+      <!-- Mapa estilizado -->
+      <div class="card map-card reveal">
+        <h3>Mapa de risco — Brasil</h3>
+        <p class="card-sub">Passe o cursor sobre os pontos para ver detalhes de cada região.</p>
+        <div class="map-stage" id="mapStage">
+          <div class="land"></div>
+          <!-- pontos pulsantes inseridos via main.js -->
+        </div>
+        <div class="map-legend">
+          <span><i class="legend-dot" style="background:var(--risk-baixo)"></i>Baixo</span>
+          <span><i class="legend-dot" style="background:var(--risk-medio)"></i>Médio</span>
+          <span><i class="legend-dot" style="background:var(--risk-alto)"></i>Alto</span>
+          <span><i class="legend-dot" style="background:var(--risk-critico)"></i>Crítico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATUS ORBITAL ============ -->
+  <section class="container section" style="padding-top:0">
+    <div class="section-head">
+      <span class="eyebrow">Constelação</span>
+      <h2 class="section-title">Status orbital</h2>
+      <p class="section-lead" style="margin-left:0">Telemetria simulada dos satélites: cobertura do território e qualidade do enlace de dados.</p>
+    </div>
+    <div class="grid grid-3" id="statusOrbital"><!-- cartões via main.js --></div>
+  </section>
+
+  <!-- ============ LEITURAS + GRÁFICO ============ -->
+  <section class="container section" style="padding-top:0">
+    <div class="grid dash-row" style="grid-template-columns:1fr 1.2fr;gap:22px">
+      <!-- Leituras satelitais -->
+      <div class="card map-card reveal">
+        <h3>Leituras satelitais recentes</h3>
+        <p class="card-sub">Telemetria captada pela constelação.</p>
+        <div class="feed" id="leituras"><!-- preenchido via main.js --></div>
+      </div>
+
+      <!-- Gráfico de evolução -->
+      <div class="card chart-card reveal">
+        <h3>Evolução do índice de risco</h3>
+        <p class="card-sub">Média ponderada de risco da rede nos últimos 7 dias (escala 0–100).</p>
+        <div class="chart" id="grafico"><!-- barras geradas via main.js --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REGIÕES MONITORADAS ============ -->
+  <section class="container section" style="padding-top:0">
+    <div class="section-head">
+      <span class="eyebrow">Regiões</span>
+      <h2 class="section-title">Regiões monitoradas</h2>
+    </div>
+    <div class="grid grid-3" id="regioesGrid"><!-- cartões via main.js --></div>
+  </section>
+
+  <!-- Footer injetado por main.js -->
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="js/data.js?v=7"></script>
+  <script src="js/main.js?v=7"></script>
+</body>
+</html>

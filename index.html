@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORBITA — Sistema de Alerta Climático por Satélite</title>
+  <meta name="description" content="ORBITA transforma dados de satélite em alertas que protegem vidas: enchentes, queimadas, seca e deslizamentos. Do espaço para proteger a Terra." />
+  <link rel="stylesheet" href="css/style.css?v=7" />
+</head>
+<body data-page="index">
+
+  <!-- Header injetado por main.js (renderHeader) -->
+  <header class="site-header" id="siteHeader"></header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <!-- Vídeo de fundo (HTML puro). Coloque assets/video/orbita.mp4.
+         Se o arquivo não existir, o fundo gradiente padrão aparece. -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-photo">
+        <img src="assets/img/hero.png" alt="" />
+      </div>
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <!-- Marcadores interativos sobre a imagem: tornam o hero intuitivo.
+         Posições em % (ajustáveis) sobre a área da Terra/Brasil. -->
+    <div class="hero-markers" id="heroMarkers">
+      <!-- AJUSTE AQUI: left = horizontal (↑ = direita) · top = vertical (↑ = baixo) -->
+      <a class="hero-marker tone-fire"    href="alertas.html?tipo=Queimada"     title="Ver alertas de Queimada"     style="left:72%; top:37%"><span class="hm-dot" data-icon="fire"></span><span class="hm-label">Queimada</span></a>
+      <a class="hero-marker tone-drought" href="alertas.html?tipo=Seca"         title="Ver alertas de Seca"         style="left:87%; top:41%"><span class="hm-dot" data-icon="sun"></span><span class="hm-label">Seca</span></a>
+      <a class="hero-marker tone-water"   href="alertas.html?tipo=Enchente"     title="Ver alertas de Enchente"     style="left:81%; top:60%"><span class="hm-dot" data-icon="wave"></span><span class="hm-label">Enchente</span></a>
+      <a class="hero-marker tone-land"    href="alertas.html?tipo=Deslizamento" title="Ver alertas de Deslizamento" style="left:73%; top:78%"><span class="hm-dot" data-icon="mountain"></span><span class="hm-label">Deslizamento</span></a>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow">Economia Espacial · Prevenção de Desastres</span>
+        <h1>Dados do espaço.<br /><span class="gradient-text">Decisões para proteger a Terra.</span></h1>
+        <p class="subtitle">
+          O ORBITA transforma dados simulados de uma constelação de satélites em
+          alertas simples e acionáveis, antecipando enchentes, queimadas, seca e
+          deslizamentos antes que se tornem tragédias.
+        </p>
+        <div class="hero-actions">
+          <a href="dashboard.html" class="btn btn-primary">Acessar Dashboard →</a>
+          <a href="alertas.html" class="btn btn-ghost">Ver Alertas</a>
+        </div>
+        <div class="slogan-pill"><span class="dot" style="width:10px;height:10px"></span> “Do espaço para proteger a Terra.”</div>
+
+        <div class="hero-stats">
+          <div><div class="hs-num gradient-text">5</div><div class="hs-lbl">Satélites simulados</div></div>
+          <div><div class="hs-num gradient-text">8</div><div class="hs-lbl">Regiões monitoradas</div></div>
+          <div><div class="hs-num gradient-text">24/7</div><div class="hs-lbl">Monitoramento contínuo</div></div>
+        </div>
+      </div>
+
+      <!-- Coluna direita vazia: o satélite/Terra vêm da imagem de fundo (hero.png).
+           A animação orbital em CSS é exibida apenas se a imagem não existir. -->
+      <div class="orbit-visual orbit-fallback" aria-hidden="true">
+        <div class="orbit-ring r1"><span class="sat"></span></div>
+        <div class="orbit-ring r2"><span class="sat"></span></div>
+        <div class="orbit-ring r3"></div>
+        <div class="planet"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AVISO ACADÊMICO ============ -->
+  <div class="container">
+    <div class="disclaimer reveal">
+      <span class="disc-ico" data-icon="satellite"></span>
+      <div><strong>Protótipo acadêmico.</strong> Todos os dados exibidos são simulados e gerados estaticamente para a Global Solution da FIAP — Engenharia de Software. O objetivo é demonstrar, de forma realista, como a infraestrutura da economia espacial pode gerar valor social direto na Terra.</div>
+    </div>
+  </div>
+
+  <!-- ============ PROBLEMA / SOLUÇÃO ============ -->
+  <section class="section">
+    <div class="container split">
+      <div class="card feature-block reveal">
+        <span class="eyebrow">O problema</span>
+        <h2>Desastres chegam mais rápido que os avisos</h2>
+        <p>
+          Eventos climáticos extremos atingem milhões de brasileiros todos os anos
+          e se tornam mais frequentes com a mudança do clima. Muitas vezes o dado
+          ambiental existe — em satélites e estações —, mas chega tarde, técnico
+          demais e distante de quem precisa decidir.
+        </p>
+        <ul class="feature-list">
+          <li>Dados orbitais dispersos e de difícil interpretação</li>
+          <li>Ausência de alertas claros para a população e a Defesa Civil</li>
+          <li>Resposta lenta a enchentes, queimadas, seca e deslizamentos</li>
+        </ul>
+      </div>
+
+      <div class="card feature-block reveal">
+        <span class="eyebrow">A solução</span>
+        <h2>Inteligência orbital traduzida em ação</h2>
+        <p>
+          O ORBITA conecta a nova corrida tecnológica a um problema real: capta a
+          telemetria de uma constelação de satélites simulados, cruza variáveis
+          ambientais e converte tudo em alertas simples para cidades, agricultores,
+          moradores e a Defesa Civil — democratizando o acesso ao dado espacial.
+        </p>
+        <ul class="feature-list">
+          <li>Monitoramento contínuo de regiões em risco</li>
+          <li>Classificação automática por nível: baixo, médio, alto e crítico</li>
+          <li>Painel com mapa, métricas, índice de risco e tendências</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIPOS DE RISCO ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="eyebrow">Cobertura</span>
+        <h2 class="section-title">Quatro riscos monitorados</h2>
+        <p class="section-lead">A plataforma cruza temperatura, umidade, chuva acumulada e índice de vegetação (NDVI) captados por satélite para classificar cada ameaça.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card card-hover risk-card tone-water reveal">
+          <div class="risk-icon" data-icon="wave"></div>
+          <h3>Enchentes</h3>
+          <p>Radar SAR e dados pluviométricos monitoram o nível dos rios e a chuva acumulada para antecipar transbordamentos em áreas urbanas e ribeirinhas.</p>
+        </div>
+        <div class="card card-hover risk-card tone-fire reveal">
+          <div class="risk-icon" data-icon="fire"></div>
+          <h3>Queimadas</h3>
+          <p>Sensores térmicos e infravermelhos detectam focos de calor e plumas de fumaça, sinalizando propagação rápida em períodos de seca.</p>
+        </div>
+        <div class="card card-hover risk-card tone-drought reveal">
+          <div class="risk-icon" data-icon="sun"></div>
+          <h3>Seca</h3>
+          <p>Imagens multiespectrais avaliam umidade do solo e estresse hídrico da vegetação, protegendo a produção agrícola e o abastecimento de água.</p>
+        </div>
+        <div class="card card-hover risk-card tone-land reveal">
+          <div class="risk-icon" data-icon="mountain"></div>
+          <h3>Deslizamentos</h3>
+          <p>O cruzamento entre saturação do solo e relevo aponta encostas com risco de movimentação de massa em áreas de ocupação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="eyebrow">Da órbita à decisão</span>
+        <h2 class="section-title">Como o ORBITA funciona</h2>
+        <p class="section-lead">Um fluxo contínuo que parte do espaço e chega a quem precisa agir.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card card-hover risk-card reveal">
+          <div class="risk-icon step-num">1</div>
+          <h3>Captura orbital</h3>
+          <p>Satélites simulados coletam dados ópticos, térmicos e de radar sobre o território brasileiro.</p>
+        </div>
+        <div class="card card-hover risk-card reveal">
+          <div class="risk-icon step-num">2</div>
+          <h3>Processamento</h3>
+          <p>O sistema cruza as variáveis ambientais e calcula um índice de risco para cada região.</p>
+        </div>
+        <div class="card card-hover risk-card reveal">
+          <div class="risk-icon step-num">3</div>
+          <h3>Alerta inteligente</h3>
+          <p>Riscos são classificados por nível e transformados em mensagens claras e objetivas.</p>
+        </div>
+        <div class="card card-hover risk-card reveal">
+          <div class="risk-icon step-num">4</div>
+          <h3>Ação na Terra</h3>
+          <p>Defesa Civil, cidades, agricultores e moradores recebem o alerta e agem a tempo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ODS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="eyebrow">Impacto social</span>
+        <h2 class="section-title">Conexão com os ODS da ONU</h2>
+        <p class="section-lead">A solução une inovação tecnológica e economia espacial a metas globais de desenvolvimento sustentável.</p>
+      </div>
+      <div class="grid grid-4">
+        <!-- ODS 09 — rede de inovação (nós orbitando) -->
+        <div class="card card-hover ods-card reveal">
+          <div class="ods-ring" style="color:#4f8cff">
+            <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <circle cx="32" cy="32" r="4.5" fill="currentColor" stroke="none"/>
+              <g class="net-orbit">
+                <line x1="32" y1="32" x2="32" y2="12"/>
+                <line x1="32" y1="32" x2="49" y2="42"/>
+                <line x1="32" y1="32" x2="15" y2="42"/>
+                <circle cx="32" cy="12" r="3.4" fill="currentColor" stroke="none"/>
+                <circle cx="49" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+                <circle cx="15" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+              </g>
+            </svg>
+          </div>
+          <div class="ods-num">09</div>
+          <h4>Indústria, Inovação e Infraestrutura</h4>
+          <p>Aplica infraestrutura espacial e ciência de dados para construir resiliência climática.</p>
+        </div>
+
+        <!-- ODS 11 — cidades (janelas piscando) -->
+        <div class="card card-hover ods-card reveal">
+          <div class="ods-ring" style="color:#38bdf8">
+            <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+              <path d="M12 52V30h12v22"/>
+              <path d="M24 52V16h16v36"/>
+              <path d="M40 52V24h12v28"/>
+              <line x1="8" y1="52" x2="56" y2="52"/>
+              <g class="city-windows" fill="currentColor" stroke="none">
+                <rect x="15" y="34" width="3" height="3"/><rect x="29" y="22" width="3" height="3"/>
+                <rect x="34" y="22" width="3" height="3"/><rect x="29" y="30" width="3" height="3"/>
+                <rect x="44" y="30" width="3" height="3"/><rect x="44" y="38" width="3" height="3"/>
+              </g>
+            </svg>
+          </div>
+          <div class="ods-num">11</div>
+          <h4>Cidades e Comunidades Sustentáveis</h4>
+          <p>Torna as cidades mais seguras e preparadas para eventos climáticos extremos.</p>
+        </div>
+
+        <!-- ODS 13 — clima (globo girando) -->
+        <div class="card card-hover ods-card reveal">
+          <div class="ods-ring" style="color:#2dd4bf">
+            <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="32" cy="32" r="20"/>
+              <line x1="12" y1="32" x2="52" y2="32"/>
+              <ellipse class="globe-spin" cx="32" cy="32" rx="9" ry="20"/>
+            </svg>
+          </div>
+          <div class="ods-num">13</div>
+          <h4>Ação Contra a Mudança do Clima</h4>
+          <p>Antecipa e previne desastres ambientais com resposta rápida e orientada por dados.</p>
+        </div>
+
+        <!-- ODS 02 — fome zero (folhas balançando) -->
+        <div class="card card-hover ods-card reveal">
+          <div class="ods-ring" style="color:#34d399">
+            <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M32 54V30"/>
+              <line x1="24" y1="54" x2="40" y2="54"/>
+              <path class="leaf-l" d="M32 38c-10-1-16-9-14-18 10 0 16 8 14 18Z"/>
+              <path class="leaf-r" d="M32 32c10-1 16-9 14-18-10 0-16 8-14 18Z"/>
+            </svg>
+          </div>
+          <div class="ods-num">02</div>
+          <h4>Fome Zero e Agricultura Sustentável</h4>
+          <p>Protege a produção de alimentos contra a seca e perdas climáticas no campo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="card feature-block text-center reveal" style="padding:50px">
+        <h2 class="section-title">Pronto para explorar a plataforma?</h2>
+        <p class="section-lead">Veja o painel orbital em ação, acompanhe os alertas e cadastre novas regiões de monitoramento.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:26px">
+          <a href="dashboard.html" class="btn btn-primary">Acessar Dashboard →</a>
+          <a href="regioes.html" class="btn btn-ghost">Cadastrar Região</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer rico injetado por main.js (data-full=true) -->
+  <footer class="site-footer" id="siteFooter" data-full="true"></footer>
+
+  <script src="js/data.js?v=7"></script>
+  <script src="js/main.js?v=7"></script>
+</body>
+</html>
