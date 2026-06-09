@@ -471,20 +471,22 @@ body::after {
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
   gap: 28px;
-  align-items: stretch;
+  align-items: center;
 }
 .ods-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
 /* Painel de vídeo elegante */
 .ods-video {
   position: relative; margin: 0;
+  aspect-ratio: 16 / 9;            /* mesma proporção do vídeo (1280×720) -> sem corte */
   border-radius: var(--radius); overflow: hidden;
   border: 1px solid var(--glass-border);
+  background: #04050d;
   box-shadow: var(--shadow), 0 0 40px rgba(34, 211, 238, .1);
 }
 .ods-video video {
   position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover; display: block;
+  width: 100%; height: 100%; object-fit: contain; display: block;
 }
 .ods-video-glow {
   position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
