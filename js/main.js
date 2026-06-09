@@ -496,6 +496,19 @@ function animarContador(el, destino, sufixo = "") {
    D. DASHBOARD
    =================================================================== */
 
+/** Preenche os números do topo da landing a partir dos dados reais (JS),
+ *  para que nunca fiquem fora de sincronia com SATELITES/REGIOES. */
+function renderHeroStats() {
+  const totais = {
+    satelites: typeof SATELITES !== "undefined" ? SATELITES.length : null,
+    regioes:   typeof REGIOES   !== "undefined" ? REGIOES.length   : null
+  };
+  document.querySelectorAll("[data-count]").forEach((el) => {
+    const valor = totais[el.dataset.count];
+    if (valor != null) el.textContent = valor;
+  });
+}
+
 /** Cartões de métricas do topo (com contadores animados) */
 function renderMetricas() {
   const box = $("metricas");
@@ -983,6 +996,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCalibradorHero();
   initOdsFloats();
   initLoginModal();   // ícone de login/cadastro no header
+  renderHeroStats();  // números do topo da landing (a partir do JS)
 
   // Dashboard
   renderMetricas();
