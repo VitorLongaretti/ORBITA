@@ -148,6 +148,35 @@ function initCalibradorHero() {
   });
 }
 
+/** Ícones flutuantes das ODS: clique abre/fecha a mini explicação.
+ *  Fecha ao clicar em outro ícone, fora deles ou com Esc. */
+function initOdsFloats() {
+  const floats = document.querySelectorAll(".ods-float");
+  if (!floats.length) return;
+
+  function fecharTodos(exceto) {
+    floats.forEach((f) => {
+      if (f === exceto) return;
+      f.classList.remove("open");
+      const b = f.querySelector(".ods-fab");
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  floats.forEach((f) => {
+    f.addEventListener("click", (e) => e.stopPropagation()); // cliques dentro não fecham
+    const btn = f.querySelector(".ods-fab");
+    btn.addEventListener("click", () => {
+      const aberto = f.classList.toggle("open");
+      btn.setAttribute("aria-expanded", aberto ? "true" : "false");
+      fecharTodos(f);
+    });
+  });
+
+  document.addEventListener("click", () => fecharTodos(null));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") fecharTodos(null); });
+}
+
 /** Monta o rodapé. `completo=true` gera o rodapé rico da landing page */
 function renderFooter() {
   const host = $("siteFooter");
@@ -774,6 +803,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStarfield();
   initHeroVisual();
   initCalibradorHero();
+  initOdsFloats();
 
   // Dashboard
   renderMetricas();

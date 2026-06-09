@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ORBITA — Sistema de Alerta Climático por Satélite</title>
   <meta name="description" content="ORBITA transforma dados de satélite em alertas que protegem vidas: enchentes, queimadas, seca e deslizamentos. Do espaço para proteger a Terra." />
-  <link rel="stylesheet" href="css/style.css?v=9" />
+  <link rel="stylesheet" href="css/style.css?v=10" />
 </head>
 <body data-page="index">
 
@@ -185,91 +185,101 @@
         <h2 class="section-title">Conexão com os ODS da ONU</h2>
         <p class="section-lead">A solução une inovação tecnológica e economia espacial a metas globais de desenvolvimento sustentável.</p>
       </div>
-      <div class="ods-layout">
-        <!-- Painel de vídeo das ODS -->
-        <figure class="ods-video reveal">
+      <div class="ods-stage reveal">
+        <!-- Vídeo central -->
+        <figure class="ods-video">
           <video autoplay muted loop playsinline poster="assets/img/ods-referencia.png">
             <source src="assets/video/ods.mp4" type="video/mp4" />
           </video>
           <span class="ods-video-glow" aria-hidden="true"></span>
-          <figcaption>
-            <span class="ods-video-tag">Impacto global</span>
-            Os Objetivos de Desenvolvimento Sustentável no centro da missão ORBITA.
-          </figcaption>
         </figure>
 
-        <!-- Cards das ODS (grid 2×2) -->
-        <div class="ods-cards">
-        <!-- ODS 09 — rede de inovação (nós orbitando) -->
-        <div class="card card-hover ods-card reveal">
-          <div class="ods-ring" style="color:#4f8cff">
-            <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-              <circle cx="32" cy="32" r="4.5" fill="currentColor" stroke="none"/>
-              <g class="net-orbit">
-                <line x1="32" y1="32" x2="32" y2="12"/>
-                <line x1="32" y1="32" x2="49" y2="42"/>
-                <line x1="32" y1="32" x2="15" y2="42"/>
-                <circle cx="32" cy="12" r="3.4" fill="currentColor" stroke="none"/>
-                <circle cx="49" cy="42" r="3.4" fill="currentColor" stroke="none"/>
-                <circle cx="15" cy="42" r="3.4" fill="currentColor" stroke="none"/>
-              </g>
-            </svg>
+        <!-- ODS 09 — Inovação (rede orbitando) -->
+        <div class="ods-float pos-tl" style="color:#4f8cff">
+          <button class="ods-fab" type="button" aria-expanded="false" aria-label="ODS 09 — Indústria, Inovação e Infraestrutura">
+            <span class="ods-ring">
+              <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <circle cx="32" cy="32" r="4.5" fill="currentColor" stroke="none"/>
+                <g class="net-orbit">
+                  <line x1="32" y1="32" x2="32" y2="12"/>
+                  <line x1="32" y1="32" x2="49" y2="42"/>
+                  <line x1="32" y1="32" x2="15" y2="42"/>
+                  <circle cx="32" cy="12" r="3.4" fill="currentColor" stroke="none"/>
+                  <circle cx="49" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+                  <circle cx="15" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+                </g>
+              </svg>
+            </span>
+            <span class="ods-fab-num">09</span>
+          </button>
+          <div class="ods-pop" role="dialog">
+            <strong>ODS 09 · Indústria, Inovação e Infraestrutura</strong>
+            <p>Aplica infraestrutura espacial e ciência de dados para construir resiliência climática.</p>
           </div>
-          <div class="ods-num">09</div>
-          <h4>Indústria, Inovação e Infraestrutura</h4>
-          <p>Aplica infraestrutura espacial e ciência de dados para construir resiliência climática.</p>
         </div>
 
-        <!-- ODS 11 — cidades (janelas piscando) -->
-        <div class="card card-hover ods-card reveal">
-          <div class="ods-ring" style="color:#38bdf8">
-            <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
-              <path d="M12 52V30h12v22"/>
-              <path d="M24 52V16h16v36"/>
-              <path d="M40 52V24h12v28"/>
-              <line x1="8" y1="52" x2="56" y2="52"/>
-              <g class="city-windows" fill="currentColor" stroke="none">
-                <rect x="15" y="34" width="3" height="3"/><rect x="29" y="22" width="3" height="3"/>
-                <rect x="34" y="22" width="3" height="3"/><rect x="29" y="30" width="3" height="3"/>
-                <rect x="44" y="30" width="3" height="3"/><rect x="44" y="38" width="3" height="3"/>
-              </g>
-            </svg>
+        <!-- ODS 11 — Cidades (janelas piscando) -->
+        <div class="ods-float pos-tr" style="color:#38bdf8">
+          <button class="ods-fab" type="button" aria-expanded="false" aria-label="ODS 11 — Cidades e Comunidades Sustentáveis">
+            <span class="ods-ring">
+              <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+                <path d="M12 52V30h12v22"/>
+                <path d="M24 52V16h16v36"/>
+                <path d="M40 52V24h12v28"/>
+                <line x1="8" y1="52" x2="56" y2="52"/>
+                <g class="city-windows" fill="currentColor" stroke="none">
+                  <rect x="15" y="34" width="3" height="3"/><rect x="29" y="22" width="3" height="3"/>
+                  <rect x="34" y="22" width="3" height="3"/><rect x="29" y="30" width="3" height="3"/>
+                  <rect x="44" y="30" width="3" height="3"/><rect x="44" y="38" width="3" height="3"/>
+                </g>
+              </svg>
+            </span>
+            <span class="ods-fab-num">11</span>
+          </button>
+          <div class="ods-pop" role="dialog">
+            <strong>ODS 11 · Cidades e Comunidades Sustentáveis</strong>
+            <p>Torna as cidades mais seguras e preparadas para eventos climáticos extremos.</p>
           </div>
-          <div class="ods-num">11</div>
-          <h4>Cidades e Comunidades Sustentáveis</h4>
-          <p>Torna as cidades mais seguras e preparadas para eventos climáticos extremos.</p>
         </div>
 
-        <!-- ODS 13 — clima (globo girando) -->
-        <div class="card card-hover ods-card reveal">
-          <div class="ods-ring" style="color:#2dd4bf">
-            <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2">
-              <circle cx="32" cy="32" r="20"/>
-              <line x1="12" y1="32" x2="52" y2="32"/>
-              <ellipse class="globe-spin" cx="32" cy="32" rx="9" ry="20"/>
-            </svg>
+        <!-- ODS 13 — Clima (globo girando) -->
+        <div class="ods-float pos-bl" style="color:#2dd4bf">
+          <button class="ods-fab" type="button" aria-expanded="false" aria-label="ODS 13 — Ação Contra a Mudança do Clima">
+            <span class="ods-ring">
+              <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="32" cy="32" r="20"/>
+                <line x1="12" y1="32" x2="52" y2="32"/>
+                <ellipse class="globe-spin" cx="32" cy="32" rx="9" ry="20"/>
+              </svg>
+            </span>
+            <span class="ods-fab-num">13</span>
+          </button>
+          <div class="ods-pop" role="dialog">
+            <strong>ODS 13 · Ação Contra a Mudança do Clima</strong>
+            <p>Antecipa e previne desastres ambientais com resposta rápida e orientada por dados.</p>
           </div>
-          <div class="ods-num">13</div>
-          <h4>Ação Contra a Mudança do Clima</h4>
-          <p>Antecipa e previne desastres ambientais com resposta rápida e orientada por dados.</p>
         </div>
 
-        <!-- ODS 02 — fome zero (folhas balançando) -->
-        <div class="card card-hover ods-card reveal">
-          <div class="ods-ring" style="color:#34d399">
-            <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M32 54V30"/>
-              <line x1="24" y1="54" x2="40" y2="54"/>
-              <path class="leaf-l" d="M32 38c-10-1-16-9-14-18 10 0 16 8 14 18Z"/>
-              <path class="leaf-r" d="M32 32c10-1 16-9 14-18-10 0-16 8-14 18Z"/>
-            </svg>
+        <!-- ODS 02 — Fome Zero (folhas balançando) -->
+        <div class="ods-float pos-br" style="color:#34d399">
+          <button class="ods-fab" type="button" aria-expanded="false" aria-label="ODS 02 — Fome Zero e Agricultura Sustentável">
+            <span class="ods-ring">
+              <svg class="ods-anim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 54V30"/>
+                <line x1="24" y1="54" x2="40" y2="54"/>
+                <path class="leaf-l" d="M32 38c-10-1-16-9-14-18 10 0 16 8 14 18Z"/>
+                <path class="leaf-r" d="M32 32c10-1 16-9 14-18-10 0-16 8-14 18Z"/>
+              </svg>
+            </span>
+            <span class="ods-fab-num">02</span>
+          </button>
+          <div class="ods-pop" role="dialog">
+            <strong>ODS 02 · Fome Zero e Agricultura Sustentável</strong>
+            <p>Protege a produção de alimentos contra a seca e perdas climáticas no campo.</p>
           </div>
-          <div class="ods-num">02</div>
-          <h4>Fome Zero e Agricultura Sustentável</h4>
-          <p>Protege a produção de alimentos contra a seca e perdas climáticas no campo.</p>
         </div>
-        </div><!-- /.ods-cards -->
-      </div><!-- /.ods-layout -->
+      </div><!-- /.ods-stage -->
+      <p class="ods-hint">Clique nos ícones ao redor do vídeo para ver como cada ODS se conecta ao ORBITA.</p>
     </div>
   </section>
 
@@ -290,7 +300,7 @@
   <!-- Footer rico injetado por main.js (data-full=true) -->
   <footer class="site-footer" id="siteFooter" data-full="true"></footer>
 
-  <script src="js/data.js?v=9"></script>
-  <script src="js/main.js?v=9"></script>
+  <script src="js/data.js?v=10"></script>
+  <script src="js/main.js?v=10"></script>
 </body>
 </html>
